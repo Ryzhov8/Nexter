@@ -1,0 +1,344 @@
+.hero {
+  grid-column: full-start / full-end;
+  display: grid;
+  grid-template-columns: 2.5fr 1fr;
+
+  @include respond("tab-port") {
+    grid-template-columns: 1fr;
+  }
+}
+
+.info {
+  display: grid;
+  row-gap: 10rem;
+  justify-content: center;
+  padding: 8rem;
+  background-image: linear-gradient(
+      to right,
+      rgba(16, 29, 44, 0.9),
+      rgba(16, 29, 44, 0.9)
+    ),
+    url("../img/hero.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include respond("tab-port") {
+    padding: 5rem;
+  }
+
+  .subheading {
+    margin-bottom: 1rem;
+  }
+
+  .heading--primary {
+    margin-bottom: 3rem;
+  }
+}
+
+.realtors {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  row-gap: 3rem;
+  background-color: $color-secondary;
+
+  @include respond("tab-port") {
+    padding: 5rem 0;
+  }
+
+  &__list {
+    display: grid;
+    row-gap: 3rem;
+
+    @include respond("tab-port") {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4rem;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    grid-template-rows: repeat(2, 1fr);
+    column-gap: 2rem;
+    row-gap: 0.75rem;
+    align-items: center;
+
+    @include respond("tab-port") {
+      grid-template-columns: 1fr;
+      align-items: center;
+      justify-items: center;
+    }
+  }
+
+  &__img {
+    grid-row: 1/ -1;
+    width: 7rem;
+    border-radius: 50%;
+  }
+
+  &__name {
+    color: $color-grey-light-1;
+    font-size: 1.8rem;
+    align-self: flex-end;
+  }
+
+  &__add-info {
+    font-family: $font-primary;
+    font-size: 1rem;
+    text-transform: uppercase;
+    align-self: flex-start;
+  }
+}
+
+.features {
+  grid-column: center-start / center-end;
+  padding: 10rem 0;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+
+    @include respond("tab-port") {
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      gap: 7rem;
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    column-gap: 2rem;
+    row-gap: 1.5rem;
+  }
+
+  &__icon {
+    width: 4rem;
+    height: 4rem;
+    fill: $color-primary-dark;
+  }
+
+  &__heading {
+    align-self: center;
+    color: #555;
+  }
+
+  &__text {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    font-family: $font-primary;
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #777;
+  }
+}
+
+.feedback {
+  grid-column: full-start / full-end;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include respond("tab-port") {
+    grid-template-columns: 1fr;
+  }
+
+  &__composition {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    background-image: linear-gradient(
+        to right top,
+        rgba(198, 153, 99, 0.4),
+        rgba(178, 133, 81, 0.4)
+      ),
+      url("../img/back.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left center;
+
+    @include respond("tab-port") {
+      padding: 7.5rem;
+    }
+  }
+
+  &__img {
+    &:nth-child(1) {
+      grid-row: 2 / 6;
+      grid-column: 2 /6;
+      width: 100%;
+      align-self: center;
+    }
+    &:nth-child(2) {
+      z-index: 1;
+      grid-row: 4 / -1;
+      grid-column: 4 / -1;
+      width: 115%;
+    }
+
+    @include respond("tab-port") {
+      &:nth-child(1) {
+        grid-row: 1 / -1;
+        grid-column: 1 / 5;
+      }
+      &:nth-child(2) {
+        grid-row: 1 / -1;
+        width: 100%;
+        align-self: center;
+      }
+    }
+  }
+
+  &__text-content {
+    display: grid;
+    align-content: center;
+    justify-items: left;
+    padding-left: 10rem;
+    background-color: $color-grey-light-1;
+
+    @include respond("tab-port") {
+      grid-row: 1 / 2;
+      padding: 7.5rem;
+    }
+  }
+
+  .subheading {
+    margin-bottom: 1.5rem;
+  }
+
+  &__heading {
+    width: 30rem;
+    margin-bottom: 2.5rem;
+    font-size: 3.5rem;
+    font-style: italic;
+    color: $color-grey-dark-1;
+
+    @include respond("tab-port") {
+      width: 100%;
+    }
+  }
+
+  &__text {
+    width: 75%;
+    margin-bottom: 3.5rem;
+    font-style: italic;
+    color: $color-grey-dark-2;
+
+    @include respond("tab-port") {
+      width: 100%;
+    }
+  }
+}
+
+.proposals {
+  grid-column: center-start / center-end;
+  padding: 10rem 0;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5rem;
+
+    @include respond("tab-port") {
+      grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+      gap: 6rem;
+    }
+
+    // @include respond("phone") {
+    //   grid-template-columns: 1fr;
+    // }
+  }
+}
+
+.gallery {
+  grid-column: full-start / full-end;
+  padding: 1.5rem;
+  background-color: $color-grey-light-1;
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(7, 5vw);
+    gap: 1.5rem;
+  }
+
+  &__item {
+    &:nth-child(1) {
+      grid-row: 1 / span 2;
+      grid-column: 1 / span 2;
+    }
+
+    &:nth-child(2) {
+      grid-row: 1 / span 3;
+      grid-column: 3 / span 3;
+    }
+
+    &:nth-child(3) {
+      grid-row: 1 / span 2;
+      grid-column: 6 / 7;
+    }
+
+    &:nth-child(4) {
+      grid-row: 1 / span 2;
+      grid-column: 7 / -1;
+    }
+
+    &:nth-child(5) {
+      grid-row: 3 / span 3;
+      grid-column: 1 / span 2;
+    }
+
+    &:nth-child(6) {
+      grid-row: 4 / span 2;
+      grid-column: 3 / span 2;
+    }
+
+    &:nth-child(7) {
+      grid-row: 4 / 5;
+      grid-column: 5 / 6;
+    }
+
+    &:nth-child(8) {
+      grid-row: 3 / span 2;
+      grid-column: 6 / span 2;
+    }
+
+    &:nth-child(9) {
+      grid-row: 3 / span 3;
+      grid-column: 8 / -1;
+    }
+
+    &:nth-child(10) {
+      grid-row: 6 / span 2;
+      grid-column: 1 / 2;
+    }
+
+    &:nth-child(11) {
+      grid-row: 6 / span 2;
+      grid-column: 2 / span 2;
+    }
+
+    &:nth-child(12) {
+      grid-row: 6 / span 2;
+      grid-column: 4 / 5;
+    }
+
+    &:nth-child(13) {
+      grid-row: 5 / span 3;
+      grid-column: 5 / span 3;
+    }
+
+    &:nth-child(14) {
+      grid-row: 6 / span 2;
+      grid-column: 8 / -1;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+}

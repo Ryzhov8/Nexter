@@ -1,0 +1,83 @@
+.sidebar {
+  position: sticky;
+  z-index: 2;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  padding: 2.5rem 1.5rem;
+  grid-column: sidebar-start / sidebar-end;
+  grid-row: 1 / -1;
+  background-color: $color-primary-dark;
+
+  &__btn {
+    position: relative;
+    width: 4.5rem;
+    height: 3rem;
+    z-index: 2;
+
+    & .line,
+    &::after,
+    &::before {
+      width: 100%;
+      height: 0.2rem;
+      background-color: $color-grey-light-1;
+      transition: all 300ms;
+    }
+
+    &::after,
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    &--cancil {
+      &::before {
+        top: 50%;
+        transform: translateY(-50%) rotate(135deg);
+      }
+
+      &::after {
+        bottom: 50%;
+        transform: translateY(50%) rotate(-135deg);
+      }
+
+      & .line {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+    }
+  }
+
+  &--closed {
+    .sidebar__btn:hover {
+      &::before {
+        transform-origin: left;
+      }
+
+      &::after {
+        transform-origin: right;
+      }
+
+      &::before,
+      &::after {
+        transform: scaleX(50%);
+      }
+    }
+  }
+
+  @include respond("tab-port") {
+    grid-column: full-start / full-end;
+    grid-row: 1 / 2;
+    height: auto;
+    padding: 3rem 2rem;
+  }
+}

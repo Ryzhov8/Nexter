@@ -1,0 +1,33 @@
+body {
+  font-family: $font-display;
+  font-weight: 500;
+  font-size: 1.4rem;
+  line-height: 1.4;
+  color: $color-grey-light-2;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.heading {
+  &--primary {
+    color: $color-grey-light-1;
+    font-size: 4.5rem;
+    font-weight: 500;
+  }
+
+  &--hidding {
+    opacity: 0;
+    line-height: 0;
+    pointer-events: none;
+  }
+}
+
+.subheading {
+  color: $color-primary-dark;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 600;
+}

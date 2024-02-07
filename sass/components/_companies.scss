@@ -1,0 +1,34 @@
+.companies {
+  display: grid;
+  gap: 2rem;
+
+  &__text {
+    display: grid;
+    grid-template-columns: 1fr max-content 1fr;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.6rem;
+    font-family: $font-primary;
+
+    &::before,
+    &::after {
+      content: "";
+      height: 0.1rem;
+      background-color: $color-grey-light-2;
+    }
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    align-items: center;
+    justify-items: center;
+  }
+
+  &__img {
+    max-height: 2.5rem;
+    max-width: 100%;
+    filter: brightness(0.6);
+  }
+}
